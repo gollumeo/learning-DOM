@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploring the DOM</title>
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <!-- Having JavaScript included here, at the top of the file, ensures it starts loading soon -->
+  <!-- The defer attribute ensures it waits for the HTML to be fully loaded before it actually fires -->
+  <!-- This can prevent a situation where JavaScript tries to work with an element that has not been loaded yet -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>BeCode DOM exploration | <strong>Basics</strong></h1>
+  </header>
+
+  <main>
+    <section>
+      <h1>Hello DOM</h1>
+
+      <p>The DOM is a powerful tool</p>
+    </section>
+
+    <section id="content">
+      <h2 title="... though non-exhaustive">A list of things DOM you can achieve with the DOM</h2>
+
+      <ul>
+        <li>List all the elements (nodes) on a webpage</li>
+        <li>Modify those nodes programmatically</li>
+        <li>Create new nodes</li>
+        <li>React to user events (mouse clicks, keyboard typing, window resizing, ...)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    All right reserved, blablablabla ...
+  </footer>
+</body>
+</html>
