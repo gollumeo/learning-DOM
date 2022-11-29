@@ -10,13 +10,16 @@ for (let i = 0; i < learners.length; i++) {
     const newSection = document.createElement('section');
 
     //random background-color
-    const color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-    newSection.style.backgroundColor = color;
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    color = `rgb(${r}, ${g}, ${b})`;
 
     //check background brightness to change text color
-    let brightness = (parseInt(color.substring(1,3), 16) * 0.299) + (parseInt(color.substring(3,5), 16) * 0.587) + (parseInt(color.substring(5,7), 16) * 0.114);
+    let brightness = (parseInt(color.substring(1, 3), 16) * 0.299) + (parseInt(color.substring(3, 5), 16) * 0.587) + (parseInt(color.substring(5, 7), 16) * 0.114);
     let textColor;
-    if (brightness >= 60) {
+    if ((brightness > 150)) {
         textColor = 'black';
     } else {
         textColor = 'white';
