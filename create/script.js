@@ -6,7 +6,6 @@ function randColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
   }
 
-
 function lightOrDark(color) {
 
 
@@ -53,10 +52,11 @@ function lightOrDark(color) {
 }
 
 // randomizing in which order the learners are sorted so we can fake the random creation of the paragraphs
-learners.sort(() => 0.5 - Math.random());
+learners.sort(() => Math.random());
 
 const article = document.querySelector('article');
 let bool;
+
 for (let i = 0; i < learners.length; i++) {
     color = randColor();
     //create section
