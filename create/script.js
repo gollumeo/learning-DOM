@@ -2,9 +2,7 @@ let learners = ["Arno Volts", "Aurélien Mariaule", "Aurore Lemaire", "Benjamin 
 let textColor = null;
 let color = 0;
 
-function randColor() {
-    return '#' + Math.floor(Math.random() * 16777215).toString(16);
-  }
+let random = () => Math.floor(Math.random() * 256);
 
 function lightOrDark(color) {
 
@@ -52,18 +50,17 @@ function lightOrDark(color) {
 }
 
 // randomizing in which order the learners are sorted so we can fake the random creation of the paragraphs
-learners.sort(() => Math.random());
+learners.sort(() => Math.random() - 0.5);
 
 const article = document.querySelector('article');
 let bool;
 
 for (let i = 0; i < learners.length; i++) {
-    color = randColor();
+    color = 'rgb(' + random() + ', ' + random() + ', ' + random() + ')';
     //create section
     const newSection = document.createElement('section');
 
     //random background-color
-    randColor();
     newSection.style.backgroundColor = color;
 
     lightOrDark(color);
@@ -84,5 +81,4 @@ for (let i = 0; i < learners.length; i++) {
 
     //append section to article
     article.appendChild(newSection);
-
 }
